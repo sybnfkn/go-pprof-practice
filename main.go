@@ -1,14 +1,12 @@
 package main
 
 import (
+	"github.com/wolfogre/go-pprof-practice/demo"
 	"log"
 	"net/http"
 	_ "net/http/pprof"
 	"os"
 	"runtime"
-	"time"
-
-	"github.com/wolfogre/go-pprof-practice/animal"
 )
 
 func main() {
@@ -26,10 +24,13 @@ func main() {
 		os.Exit(0)
 	}()
 
-	for {
-		for _, v := range animal.AllAnimals {
-			v.Live()
-		}
-		time.Sleep(time.Second)
-	}
+	// 原本的demo
+	//for {
+	//	for _, v := range animal.AllAnimals {
+	//		v.Live()
+	//	}
+	//	time.Sleep(time.Second)
+	//}
+	// 自己造的demo
+	demo.TestGoroutine()
 }
